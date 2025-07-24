@@ -58,5 +58,18 @@ This project demonstrates how I observed various network traffic to and from Azu
 <p>
 
   - I have successfully connected to the Windows 10 Virtual Machine (VM)!
+
+</p>
+<br /
+
+<h3> Step 2: Installing Wireshark </h3>
+
+<p>
+<img src="https://github.com/user-attachments/assets/adaf1638-28e4-4946-9c4c-53eafa91cdb5" width=800/>
+</p>
+<p>
+
+
+
     
 
