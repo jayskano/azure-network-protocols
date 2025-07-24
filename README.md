@@ -20,7 +20,7 @@ This project demonstrates how I observed various network traffic to and from Azu
 
 
 <h2>Walkthrough</h2>
-<h3> Step 1: Using Remote Desktop to connect to the Windows 10 Virtual Machine (VM) </h3>
+<h3> Step 1: Using Remote Desktop to connect to the VM & Installing Wireshark </h3>
 
 <p>
 <img src="https://github.com/user-attachments/assets/47a94f6d-db64-4d09-87b2-31a15fcc72de" width=800 />
@@ -60,14 +60,116 @@ This project demonstrates how I observed various network traffic to and from Azu
   - I have successfully connected to the Windows 10 Virtual Machine (VM)!
 
 </p>
-<br /
-
-<h3> Step 2: Installing Wireshark </h3>
+<br />
 
 <p>
-<img src="https://github.com/user-attachments/assets/adaf1638-28e4-4946-9c4c-53eafa91cdb5" width=800/>
+<img src="https://github.com/user-attachments/assets/b22db5ba-86dc-444d-9b12-c2b945b3a39b" width=800/>
 </p>
 <p>
+
+  - Within the VM, I installed a program called "Wireshark".
+  - "Wireshark" is a free network packet analyzer that captures and inspects data packets traveling through a network.
+
+</p>
+<br />
+
+<h3> Step 2: Observing ICMP Traffic </h3>
+
+<p>
+<img src="https://github.com/user-attachments/assets/2f7dc07e-78e4-418c-8286-a0419ceb98d7" width=800 />
+</p>
+<p>
+
+  - Within Wireshark, I highlighted "Ethernet" and selected the blue shark fin in the top left corner to begin network inspection.
+
+</p>
+<br /
+
+<p>
+<img src="https://github.com/user-attachments/assets/68ef93ab-d493-4e5d-a4fa-5d7bb51575eb" width=800 />
+</p>
+<p>
+
+  - After clicking the blue fin, Wireshark began to display all of the network traffic that is happening inside of the virtual machine.
+
+ <p>
+<img src="https://github.com/user-attachments/assets/a213acc4-0ef9-485f-a2ce-65ab1077f9d3" width=800 />
+</p>
+<p>
+
+  - Next, I located the filter bar at the top of the screen and entered "icmp" to filter for icmp traffic only.
+  - The icmp filter will be used to obeserve traffic betwen the Windows VM and the Linux VM I created in Azure.
+
+</p>
+<br /
+
+<p>
+<img src="https://github.com/user-attachments/assets/409926b8-fd7d-49cd-9881-8ffb82dd2d1c" width=800 />
+</p>
+<p>
+
+  - Next, I went back into Azure to locate the Private IP address of the Linux VM.
+  - The Private IP address is needed in order to ping the Linux VM within the Windows VM.
+
+</p>
+<br /
+
+<p>
+<img src="https://github.com/user-attachments/assets/1ddb4535-cbd1-4263-aab7-48eaf2109fbf" width=800 />
+</p>
+<p>
+
+  - Next, I opened Windows Powershell inside of the virtual machine and entered the Private IP address of the Linux VM.
+
+</p>
+<br /
+
+<p>
+<img src="https://github.com/user-attachments/assets/fb2f79da-7ab0-45a0-878a-286aa108336a" width=800 />
+</p>
+<p>
+
+  - After receiving a reply from Powershell, Wireshark is now only displaying icmp traffic over the network.
+  - This means that the connection test between the two VMs was successful!
+
+</p>
+<br />
+
+<p>
+<img src="https://github.com/user-attachments/assets/0fc5cf87-4018-471c-bf79-babe451177ab" width=800 />
+</p>
+<p>
+
+  - After that, I went back into Powershell and entered the command "ping 10.0.0.5 -t"
+  - This command initiated a non-stop ping between the Windows VM and the Linux VM
+
+<h3> Step 3: Configuring a Firewall (Network Security Group) </h3>
+
+<p>
+<img src="https://github.com/user-attachments/assets/4499dbb5-c349-4f37-8709-755c6fe41028" width=800 />
+ </p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
