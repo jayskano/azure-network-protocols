@@ -140,18 +140,61 @@ This project demonstrates how I observed various network traffic to and from Azu
 </p>
 <p>
 
-  - After that, I went back into Powershell and entered the command "ping 10.0.0.5 -t"
-  - This command initiated a non-stop ping between the Windows VM and the Linux VM
+  - After that, I went back into Powershell and entered the command "ping 10.0.0.5 -t".
+  - This command initiated a non-stop ping between the Windows VM and the Linux VM.
 
 <h3> Step 3: Configuring a Firewall (Network Security Group) </h3>
 
 <p>
-<img src="https://github.com/user-attachments/assets/4499dbb5-c349-4f37-8709-755c6fe41028" width=800 />
- </p>
+<img src="https://github.com/user-attachments/assets/fa0ca6de-2dd2-498d-aa2c-f043d05d2890" width=800 />
+</p>
 <p>
 
+  - Within the Azure portal, I selected the Linux VM and navigated to the network settings where I located the Network Security Group (NSG) for the VM.
+
+</p>
+<br />
+
+<p>
+<img src="https://github.com/user-attachments/assets/25005b8e-eb4e-4e44-8771-db4ff68d60dc" width=400 />
+</p>
+<p>
+
+  - Next, I selected "Inbound Security Rules" and clicked "Add" to create a new rule for the Firewall.
+  - I changed the source to "Any" and the protocol to "ICMPv4".
+  - I set the action to "Deny" which will tell the Firewall to deny incoming traffic to the Linux VM.
 
 
+</p>
+<br />
+
+<p>
+<img src="https://github.com/user-attachments/assets/4114598d-5076-48ca-92c1-1309266ab96d" width=800 />
+</p>
+<p>
+
+  - Due to the new rule that I created, any new Ping request in Powershell will time out becuase the Firewall is blocking them.
+
+</p>
+<br />
+
+<p>
+<img src="https://github.com/user-attachments/assets/f385915f-cffc-4228-8411-e49a213988c9" width=800 />
+</p>
+<p>
+
+  - Next, I went back into Azure to delete the inbound security rule that I created.
+
+</p>
+<br />
+
+<p>
+<img src="https://github.com/user-attachments/assets/fa625f4e-e28d-4c05-9a4b-f4205553f8ed" width=800 />
+</p>
+<p>
+
+  - After deleting the rule, Powershell and Wireshark were able to start the ping again.
+  - Wireshark began to show requests and replies again while Powershell showed more replies from 10.0.0.5.
 
 
 
