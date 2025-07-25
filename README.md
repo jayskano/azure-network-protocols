@@ -143,6 +143,9 @@ This project demonstrates how I observed various network traffic to and from Azu
   - After that, I went back into Powershell and entered the command "ping 10.0.0.5 -t".
   - This command initiated a non-stop ping between the Windows VM and the Linux VM.
 
+</p>
+<br />
+
 <h3> Step 3: Configuring a Firewall (Network Security Group) </h3>
 
 <p>
