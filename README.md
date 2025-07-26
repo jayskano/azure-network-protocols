@@ -268,7 +268,7 @@ This project demonstrates how I observed various network traffic to and from Azu
 <br />
 
 <h2>Conclusion</h2>
-The purpose of this project was for me to see how different protocols and ports are utilizied in a network. Using Wireshark and the command line definitly gave me a better understanding of how traffic flows in a network. 
+The purpose of this project was for me to capture and analyze network traffic for different ports and protocols. Using Wireshark and the command line definitly gave me a better understanding of how traffic flows in a network. 
  
 
 
