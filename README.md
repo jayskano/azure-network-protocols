@@ -20,7 +20,7 @@ This project demonstrates how I observed various network traffic to and from Azu
 
 
 <h2>Walkthrough</h2>
-<h3> Step 1: Using Remote Desktop to connect to the VM & Installing Wireshark </h3>
+<h3> Section 1: Using Remote Desktop to connect to the VM & Installing Wireshark </h3>
 
 <p>
 <img src="https://github.com/user-attachments/assets/47a94f6d-db64-4d09-87b2-31a15fcc72de" width=800 />
@@ -73,7 +73,7 @@ This project demonstrates how I observed various network traffic to and from Azu
 </p>
 <br />
 
-<h3> Step 2: Observing ICMP Traffic </h3>
+<h3> Section 2: Observing ICMP Traffic </h3>
 
 <p>
 <img src="https://github.com/user-attachments/assets/2f7dc07e-78e4-418c-8286-a0419ceb98d7" width=800 />
@@ -146,7 +146,7 @@ This project demonstrates how I observed various network traffic to and from Azu
 </p>
 <br />
 
-<h3> Step 3: Configuring a Firewall (Network Security Group) </h3>
+<h3> Section 3: Configuring a Firewall (Network Security Group) </h3>
 
 <p>
 <img src="https://github.com/user-attachments/assets/fa0ca6de-2dd2-498d-aa2c-f043d05d2890" width=800 />
@@ -198,6 +198,78 @@ This project demonstrates how I observed various network traffic to and from Azu
 
   - After deleting the rule, Powershell and Wireshark were able to start the ping again.
   - Wireshark began to show requests and replies again while Powershell showed more replies from 10.0.0.5.
+
+</p>
+<br />
+
+<h3> Section 4: Observing SSH, DNS, & RDP Traffic) </h3>
+
+<p>
+<img src="https://github.com/user-attachments/assets/7764251f-2fb0-4046-827c-2ccd58662cd1" width=800/>
+</p>
+<p>
+
+  - In Wireshark, I applied a filter for SSH traffic only.
+  - After setting the filter, no traffic appeared initially.
+
+</p>
+<br />
+
+<p>
+<img src="https://github.com/user-attachments/assets/f71d5c35-9d69-4bd5-aacb-2ddfb751606e" width=800/>
+</p>
+<p>
+
+  - I went into Powershell and logged into the Ubuntu server using the ssh command.
+
+</p>
+<br />
+
+<p>
+<img src="https://github.com/user-attachments/assets/a85f0f5d-8ca6-496b-84e0-3a15e235c8dc" width=800 />
+</p>
+<p>
+
+  - After enetering my credentials, a spam of SSH traffic appeared in Wireshark.
+
+</p>
+<br />
+
+<p>
+<img src="https://github.com/user-attachments/assets/8c447145-e494-4cd5-960d-2f1108801012" width=800 />
+</p>
+<p>
+
+  - After examining the traffic, I closed the SSH connection and applied a filter for DNS traffic in Wireshark.
+
+</p>
+<br />
+
+<p>
+<img src="https://github.com/user-attachments/assets/9c3bfecb-73bb-4c95-b948-4d93217793f0" width=800 />
+</p>
+<p>
+
+  - After viewing the traffic, I wanted to see what the results would be for google.com so I went into Powershell and entered the website using the command "nslookup".
+  - Powershell displayed the IP address for google.com.
+
+</p>
+<br />
+
+<p>
+<img src="https://github.com/user-attachments/assets/5bfe3432-df9c-4b4c-8454-a010fb97217f" width=800 />
+</p>
+<p>
+
+  - To finish the project, I went into Wireshark and set a filter for RDP traffic by typing "tcp.port == 3389".
+  - Wireshark displayed non-stop traffic because RDP is constanly showing a live stream of traffic from one computer to another (my computer to the virtual machine).
+
+</p>
+<br />
+
+<h2>Conclusion</h2>
+The purpose of this project was for me to see how different protocols and ports are utilizied in a network. Using Wireshark and the command line definitly gave me a better understanding of how traffic flows in a network. 
+ 
 
 
 
